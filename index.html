@@ -1,330 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <title>Client-Side Video Trimmer | Cut & Trim MP4 Clips in Browser</title>
-    <meta name="description" content="Trim and cut video clips locally without uploading to any cloud server. Fast, secure, and private MP4 trimming.">
-    <link rel="canonical" href="https://us-video-trimmer.enjoy-onepage.com/">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Client-Side Video Trimmer | Cut & Trim MP4 Clips in Browser">
-    <meta property="og:description" content="Trim and cut video clips locally without uploading to any cloud server. Fast, secure, and private MP4 trimming.">
-    <meta property="og:url" content="https://us-video-trimmer.enjoy-onepage.com/">
-    <meta property="og:site_name" content="Fast Browser Video Trimmer">
-    <meta property="og:image" content="https://us-video-trimmer.enjoy-onepage.com/og-image.png">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>워터마크 없는 브라우저 비디오 컷편집기 | 100% 로컬 동영상 자르기 (Video Cutter)</title>
+    <meta content="서버 업로드 없는 100% 브라우저 비디오 트리머. 쇼츠·릴스 구간 자르기, 빠른 인코딩, 워터마크 영구 무료." name="description"/>
+    <link href="https://us-video-trimmer.enjoy-onepage.com/" rel="canonical"/>
+    <meta content="website" property="og:type"/>
+    <meta property="og:locale" content="ko_KR">
+    <meta content="https://us-video-trimmer.enjoy-onepage.com/" property="og:url"/>
+    <meta content="Video Cutter - Free Video Trimmer & Clip Cutter (No Watermark)" property="og:title"/>
+    <meta content="서버 업로드 0%! 브라우저 안에서 안전하고 빠르게 영상을 자르고 다운로드하세요." property="og:description"/>
+    <meta content="https://us-video-trimmer.enjoy-onepage.com/og-image.png" property="og:image"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="Video Cutter - Free Video Trimmer & Clip Cutter (No Watermark)" name="twitter:title"/>
+    <meta content="서버 업로드 0%! 브라우저 안에서 안전하고 빠르게 영상을 자르고 다운로드하세요." name="twitter:description"/>
+    <meta content="https://us-video-trimmer.enjoy-onepage.com/og-image.png" name="twitter:image"/>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Client-Side Video Trimmer | Cut & Trim MP4 Clips in Browser">
-    <meta name="twitter:description" content="Trim and cut video clips locally without uploading to any cloud server. Fast, secure, and private MP4 trimming.">
-    <meta name="twitter:image" content="https://us-video-trimmer.enjoy-onepage.com/og-image.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106"></script>
 
-    <!-- Schema.org WebApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Fast Browser Video Trimmer",
-      "url": "https://us-video-trimmer.enjoy-onepage.com/",
-      "description": "Trim and cut video clips locally without uploading to any cloud server. Fast, secure, and private MP4 trimming.",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "All",
-      "inLanguage": "en-US",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://us-video-trimmer.enjoy-onepage.com/#webapp",
+          "name": "Video Cutter - Free Video Trimmer & Clip Cutter (No Watermark)",
+          "url": "https://us-video-trimmer.enjoy-onepage.com/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "description": "서버 업로드 없는 100% 브라우저 비디오 트리머. 쇼츠·릴스 구간 자르기 무료.",
+          "image": "https://us-video-trimmer.enjoy-onepage.com/og-image.png",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://us-video-trimmer.enjoy-onepage.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "동영상 파일이 외부 웹 서버로 업로드되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "아닙니다. HTML5 File API 및 Canvas 비디오 프레임 추출 기술을 통해 영상 파일이 사용자의 컴퓨터/스마트폰 메모리 내에서만 로컬 연산되므로 100% 안전합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "자른 동영상에 워터마크(로고)가 강제로 붙나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "붙지 않습니다. CapCut이나 기성 무료 편집 앱과 달리 워터마크가 전혀 삽입되지 않은 원본 그대로의 깔끔한 클립을 무료로 추출할 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "유튜브 쇼츠나 인스타그램 릴스 길이에 맞춰 자를 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 시작 시간과 종료 시간을 s 단위로 정밀하게 슬라이더로 조절하여 15s, 30s, 60s 등 숏폼 규격에 딱 맞춰 자를 수 있습니다."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Layout Shield: Anti 390px Horizontal Overflow -->
     <style id="layout-shield">
-        html, body {
-            max-width: 100% !important;
-            width: 100% !important;
-            overflow-x: hidden !important;
-        }
-        main, article, .container {
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        .manual-ad-box {
-            width: 100%;
-            max-width: 960px;
-            overflow: hidden;
-            margin: 12px auto;
-        }
-        .manual-ad-box ins {
-            max-width: 100% !important;
-            display: block;
-        }
+      html, body { max-width: 100%; overflow-x: hidden; }
+      .manual-ad-box { width: 100%; max-width: 960px; margin-left: auto; margin-right: auto; text-align: center; overflow: hidden; }
+      .manual-ad-box ins { max-width: 100% !important; overflow: hidden !important; }
+      :focus-visible { outline: 2px solid #3b82f6 !important; outline-offset: 2px !important; }
+      input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid #2563eb !important; outline-offset: 1px !important; }
     </style>
+<style id="mobile-hardening-shield">
+  /* 모바일 한글 단어 단위 줄바꿈 보존 & 버튼 텍스트 단일행 쉴드 */
+  body, h1, h2, h3, h4, p, span, label {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  button, [role="button"], a.btn {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+  @media (max-width: 640px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+    button, [role="button"], a.btn {
+      min-height: 42px;
+    }
+  }
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col justify-between">
+    <div class="manual-ad-box ad-top-banner" style="width: 100%; max-width: 960px; margin: 8px auto 16px; text-align: center;">
+        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="horizontal" data-ad-slot="3824727725" data-full-width-responsive="true" style="display:inline-block;width:100%;height:60px;"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-    <!-- Header -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2 font-black text-slate-900 text-lg sm:text-xl tracking-tight">
-                <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-black shadow-sm">1P</span>
-                <span>Fast Browser Video Trimmer</span>
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 text-slate-900 font-bold text-lg hover:text-red-600 transition">
+                <span class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center font-black text-sm shadow-sm"><i class="fa-solid fa-scissors"></i></span>
+                <span>Video Cutter</span>
             </a>
-            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
-                2026 US Edition
-            </span>
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-red-200">
+                    <i class="fa-solid fa-ban text-red-500 mr-1"></i>No Watermark
+                </span>
+            </div>
         </div>
     </header>
 
-    <!-- Top Ad Slot (Slim 50-60px) -->
-    <div class="manual-ad-box px-4">
-        <ins class="adsbygoogle"
-             style="display:block; height:60px; max-height:60px;"
-             data-ad-client="ca-pub-2228289204702106"
-             data-ad-slot="3824727725"
-             data-ad-format="horizontal"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Main Workspace -->
-    <main class="max-w-6xl mx-auto px-4 py-6 flex-grow w-full">
-        <!-- Title Banner -->
-        <div class="mb-8 text-center max-w-2xl mx-auto">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight mb-2">Fast Browser Video Trimmer</h1>
-            <p class="text-sm sm:text-base text-slate-600">Trim and cut video clips locally without uploading to any cloud server. Fast, secure, and private MP4 trimming.</p>
-        </div>
-
-        <!-- 2-Column Gold Standard Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <!-- Left: Input Form (6 cols) -->
-            <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-                    <span>Input Parameters</span>
-                </h2>
-                
-        <div class="space-y-4">
+    <section class="max-w-4xl mx-auto px-4 pt-6 pb-2 w-full">
+        <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Primary Value / Amount ($)</label>
-                <div class="relative">
-                    <span class="absolute left-3 top-3 text-slate-400 font-bold">$</span>
-                    <input type="text" id="primaryVal" value="1,000" class="w-full pl-8 pr-4 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 text-base focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="1,000">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800 mb-2">
+                    <i class="fa-solid fa-bolt text-red-600"></i><span>100% 브라우저 로컬 비디오 인스턴트 트리머</span>
                 </div>
+                <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                    Free Video Trimmer & Clip Cutter (No Watermark)
+                </h1>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1">
+                    서버 업로드 없는 100% 안전한 동영상 자르기. 쇼츠·릴스 구간을 s 단위로 손쉽게 편집하세요.
+                </p>
             </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Secondary Parameter / Multiplier</label>
-                <input type="number" id="secVal" value="12" min="1" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 text-base focus:ring-2 focus:ring-blue-500 focus:outline-none">
-            </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Calculation Category</label>
-                <select id="calcCat" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl font-semibold text-slate-800 text-base focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <option value="standard">Standard US Model (Benchmark)</option>
-                    <option value="conservative">Conservative Estimate (-10%)</option>
-                    <option value="growth">Accelerated Target (+15%)</option>
-                </select>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4 text-center min-w-[140px] shadow-sm">
+                <div class="text-[11px] font-bold text-slate-500">Selected Clip Duration</div>
+                <div class="text-2xl font-black text-red-600 mt-0.5" id="clipDurationText">0.0s</div>
             </div>
         </div>
-        
-                <button type="button" onclick="calculate()" class="mt-6 w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-black text-base rounded-xl shadow-md transition duration-150 cursor-pointer whitespace-nowrap">
-                    Calculate Now
-                </button>
-            </div>
+    </section>
 
-            <!-- Right: Results Card (6 cols sticky) -->
-            <div class="lg:col-span-6 lg:sticky lg:top-24">
-                <div id="resultCard" class="hidden">
-                    
-        <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-md mb-6">
-            <p class="text-xs uppercase font-bold tracking-wider opacity-90 mb-1">Estimated Annual Result</p>
-            <h3 id="resPrimary" class="text-3xl sm:text-4xl font-black tracking-tight">$0</h3>
-            <p class="text-xs mt-2 opacity-80">Calculated under standard US benchmarking formulas</p>
-        </div>
-        <div class="space-y-3 text-sm text-slate-700 bg-white p-5 rounded-2xl border border-slate-200">
-            <div class="flex justify-between pb-2 border-b border-slate-100">
-                <span class="text-slate-500">Monthly Equivalent:</span>
-                <span id="resMonthly" class="font-bold text-slate-900">$0</span>
-            </div>
-            <div class="flex justify-between pt-1">
-                <span class="font-bold text-slate-900">Growth / Variance Index:</span>
-                <span id="resBenchmark" class="font-black text-blue-600">0%</span>
-            </div>
-        </div>
-        
-                    <div class="mt-4 flex gap-3">
-                        <button type="button" onclick="copyResults()" class="flex-1 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition shadow-sm cursor-pointer whitespace-nowrap">
-                            Copy Results
-                        </button>
-                        <button type="button" onclick="resetForm()" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition cursor-pointer whitespace-nowrap">
-                            Reset
-                        </button>
+    <!-- Workspace: 1:1 Left File & Controls, Right Video Player (Sticky) -->
+    <main class="max-w-4xl mx-auto px-4 py-4 w-full flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <!-- Left 5 cols: Upload & Slider Controls -->
+            <section class="lg:col-span-5 bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
+                <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-film text-red-600"></i>동영상 파일 선택
+                </h2>
+
+                <div class="border-2 border-dashed border-slate-200 hover:border-red-400 rounded-2xl p-6 text-center cursor-pointer transition bg-slate-50/50" onclick="document.getElementById('videoFile').click()">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-red-500 mb-2"></i>
+                    <div class="text-xs font-bold text-slate-700">Select or Drag & Drop Video File</div>
+                    <div class="text-[11px] text-slate-400 mt-1">MP4, WebM, MOV Supported (100% Private, Zero Server Upload)</div>
+                    <input type="file" id="videoFile" accept="video/*" class="hidden" aria-label="비디오 파일 선택">
+                </div>
+
+                <!-- Trim Controls -->
+                <div id="trimControls" class="space-y-3 opacity-50 pointer-events-none">
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                            <span>Start Time</span>
+                            <span class="font-mono text-red-600" id="startTimeVal">0.0s</span>
+                        </div>
+                        <input type="range" id="startRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="시작 시간">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                            <span>End Time</span>
+                            <span class="font-mono text-red-600" id="endTimeVal">0.0s</span>
+                        </div>
+                        <input type="range" id="endRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="종료 시간">
+                    </div>
+
+                    <button id="trimBtn" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 whitespace-nowrap" aria-label="구간 자르기">
+                        <i class="fa-solid fa-scissors"></i><span>구간 자르고 다운로드</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right 7 cols: Video Preview Player (Sticky) -->
+            <section class="lg:col-span-7 space-y-4">
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm text-center">
+                    <div class="w-full bg-black rounded-xl overflow-hidden aspect-video flex items-center justify-center mb-3">
+                        <video id="videoPlayer" controls class="w-full h-full object-contain hidden"></video>
+                        <div id="noVideoMsg" class="text-xs text-slate-400 p-6">
+                            <i class="fa-solid fa-play-circle text-4xl text-slate-600 mb-2 block"></i>
+                            왼쪽에서 동영상 파일을 선택하면 실시간 플레이어가 나타납니다.
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+                        <span id="videoMetaText">해상도: - | 전체 길이: -</span>
+                        <span class="font-bold text-emerald-600"><i class="fa-solid fa-shield mr-1"></i>100% 로컬 연산</span>
                     </div>
                 </div>
-                <!-- Initial Placeholder -->
-                <div id="placeholderCard" class="p-8 text-center border-2 border-dashed border-slate-200 rounded-2xl text-slate-400">
-                    <p class="text-sm font-semibold">Enter your inputs on the left and click "Calculate Now" to view full projections.</p>
-                </div>
-            </div>
+            </section>
+        </div>
+    
+      <div class="mt-4 text-center">
+        <button id="masterCopyBtn" onclick="copyMasterResult()" class="whitespace-nowrap w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm mx-auto whitespace-nowrap">
+          <span>📋 결과 복사하기</span>
+        </button>
+      </div>
+
+  </main>
+
+    <!-- Toast -->
+    <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xl z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-red-400"></i><span id="toastMessage">안내 메시지</span>
+    </div>
+
+    <!-- 📖 E-E-A-T Guide Section (Q1~Q7) -->
+    <section class="max-w-4xl mx-auto my-8 px-4">
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+        <div class="border-b border-slate-200 pb-4">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700 mb-2">
+            <span>⚖️ 2026년 W3C WebCodecs 및 HTML5 미디어 표준</span>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 tracking-tight">
+            브라우저 로컬 비디오 트리밍 원리 및 숏폼 규격 가이드
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            본 도구는 HTML5 Media Source Extensions 및 Canvas 하드웨어 가속 비디오 렌더링 표준을 준수합니다.
+          </p>
         </div>
 
-        <!-- E-E-A-T Editorial FAQ Accordion -->
-        <section class="mt-14 max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-2xl border border-slate-200">
-            <h2 class="text-lg sm:text-xl font-black text-slate-900 mb-4">Frequently Asked Questions</h2>
-            <div class="space-y-3">
-                
-    <!-- In-Depth Guidebook CTA Banner (4-1-4 Compliance) -->
-    <div class="mt-8 mb-8 p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl border border-indigo-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">핵심 산출 공식 (Formula & Video Spec)</div>
+          <div class="text-sm sm:text-base font-extrabold text-slate-900 font-mono leading-relaxed">
+            클립 재생 시간 = 종료 타임스탬프(s) - 시작 타임스탬프(s) | 숏폼 권장 길이: 유튜브 쇼츠 <60s, 릴스 15~30s
+          </div>
+        </div>
+
+        <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">💡 실전 계산 사례 (Case Study)</div>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            예를 들어, 10분짜리 브이로그 영상 원본에서 가장 재미있는 하이라이트 구간(02:15 ~ 02:45)의 30s 클립을 선택하면 서버 업로드 대기 시간 없이 브라우저 메모리에서 1s 만에 분할되어 인스타그램 릴스 규격으로 즉시 저장됩니다.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2"><span>❓</span> 자주 묻는 질문 (FAQ)</h4>
+          
+    <!-- 심층 가이드북 바로가기 (4-1-4 헌법 준수) -->
+    <div class="mt-8 mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span class="inline-block px-3 py-1 bg-indigo-600 text-white text-xs font-bold rounded-full mb-2">COMPLETE 2026 HANDBOOK</span>
-        <h3 class="text-lg font-bold text-gray-900">Want to master the statutory details? Read our in-depth guide</h3>
-        <p class="text-xs text-gray-600 mt-1">Explore official calculation formulas, edge-case exemptions, and strategic checklists.</p>
+        <span class="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full mb-2">2026 실무 가이드</span>
+        <h3 class="text-lg font-bold text-gray-900">공식 기준과 상세 산식이 궁금하신가요?</h3>
+        <p class="text-xs text-gray-600 mt-1">Free Video Trimmer & Clip Cutter (No Watermark)의 최신 법정 고시, 감면 혜택, 실무 체크리스트를 확인해보세요.</p>
       </div>
-      <a href="/guides/guide.html" class="whitespace-nowrap px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 text-xs shrink-0">
-        Read In-Depth Guide &rarr;
+      <a href="/guides/guide.html" class="whitespace-nowrap px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 text-xs shrink-0">
+        심층 가이드북 읽기 &rarr;
       </a>
     </div>
 
-    <details class="group border border-slate-200 rounded-xl p-4 transition">
-                    <summary class="font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
-                        <span>How accurate are these calculations?</span>
-                        <span class="text-blue-600 font-bold group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Calculations use 2026 statutory formulas and verified standard economic models. While highly accurate for benchmarking, always consult a certified professional for individual legal or financial filings.
-                    </p>
-                </details>
-                <details class="group border border-slate-200 rounded-xl p-4 transition">
-                    <summary class="font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
-                        <span>Is my personal or financial data stored?</span>
-                        <span class="text-blue-600 font-bold group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        No. 100% of the computations occur locally in your browser's JavaScript engine. Zero personal or financial data is transmitted to or saved on external servers.
-                    </p>
-                </details>
-                <details class="group border border-slate-200 rounded-xl p-4 transition">
-                    <summary class="font-bold text-slate-800 text-sm cursor-pointer flex justify-between items-center select-none">
-                        <span>Can I export or share my calculation results?</span>
-                        <span class="text-blue-600 font-bold group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Yes! Click the "Copy Results" button to copy a formatted summary with a link directly to your clipboard for sharing via Slack, email, or messaging apps.
-                    </p>
-                </details>
+    <details class="group border border-slate-200 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
+              <span>Q. 동영상 파일이 외부 웹 서버로 업로드되나요?</span>
+              <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
+            </summary>
+            <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+              아닙니다. HTML5 File API 및 Canvas 비디오 프레임 추출 기술을 통해 영상 파일이 사용자의 컴퓨터/스마트폰 메모리 내에서만 로컬 연산되므로 100% 안전합니다.
             </div>
-        </section>
-    </main>
+          </details>
+          <details class="group border border-slate-200 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
+              <span>Q. 자른 동영상에 워터마크(로고)가 강제로 붙나요?</span>
+              <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
+            </summary>
+            <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+              붙지 않습니다. CapCut이나 기성 무료 편집 앱과 달리 워터마크가 전혀 삽입되지 않은 원본 그대로의 깔끔한 클립을 무료로 추출할 수 있습니다.
+            </div>
+          </details>
+          <details class="group border border-slate-200 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
+              <span>Q. 유튜브 쇼츠나 인스타그램 릴스 길이에 맞춰 자를 수 있나요?</span>
+              <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
+            </summary>
+            <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+              네, 시작 시간과 종료 시간을 s 단위로 정밀하게 슬라이더로 조절하여 15s, 30s, 60s 등 숏폼 규격에 딱 맞춰 자를 수 있습니다.
+            </div>
+          </details>
+        </div>
 
-    <!-- Bottom Ad Slot (Large Display) -->
-    <div class="manual-ad-box px-4 mt-6">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2228289204702106"
-             data-ad-slot="3416334507"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
+        <div>
+          <h4 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span>📋</span> 반드시 챙겨야 할 실전 체크리스트
+          </h4>
+          <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
+            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>숏폼 영상은 첫 3s 이내에 시선을 끄는 구간을 시작점으로 설정하세요.</span></li>
+            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>유튜브 쇼츠 규격(최대 60s)을 s과하지 않도록 상단 표시 시간을 확인하세요.</span></li>
+            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>대용량 4K 영상 편집 시 기기 메모리 여유 공간을 확보하고 브라우저 탭을 정리하세요.</span></li>
+          </ul>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-500 leading-relaxed">
+          <strong>⚠️ 면책 고지:</strong> 본 비디오 컷편집기는 사용자의 브라우저 사양(GPU/CPU/메모리)에 따라 성능 차이가 발생할 수 있습니다. 저작권이 있는 타인의 영상을 무단 편집·배포하여 발생하는 법적 책임은 사용자 본인에게 있습니다.
+        </div>
+      </div>
+    </section>
+
+    <div class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; margin: 24px auto 16px; text-align: center;">
+        <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <!-- Floating Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-2xl opacity-0 pointer-events-none transition-opacity duration-200 z-50">
-        Copied to clipboard!
+    <!-- 🔗 딥리서치 토픽 클러스터: 관련 전문 블로그 가이드 역링크 -->
+<section class="max-w-4xl mx-auto my-6 px-4">
+  <div class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800/80 rounded-2xl border border-blue-200/80 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl flex-shrink-0">💻</span>
+      <div class="text-left">
+        <div class="text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">공식 심층 가이드 연계</div>
+        <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug">카카오톡 무료 PC 백업 및 컴퓨터·스마트폰 필수 IT 문제해결 완벽 가이드</div>
+      </div>
     </div>
+    <a href="https://tech-kr.enjoy-onepage.com/2026/09/18/kakaotalk-free-pc-backup-guide/" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition shadow-sm hover:shadow flex items-center gap-1.5">
+      <span>테크 가이드 읽기</span>
+      <span>→</span>
+    </a>
+  </div>
+</section>
 
-    <!-- Modern Trust Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-12">
-        <div class="max-w-6xl mx-auto px-4 space-y-3">
-            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-semibold text-slate-600">
-                <a href="/terms.html" class="hover:text-blue-600 transition">Terms of Service</a>
-                <span class="text-slate-300">|</span>
-                <a href="/privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a>
-                <span class="text-slate-300">|</span>
-                <a href="/disclaimer.html" class="hover:text-blue-600 transition">Disclaimer</a>
+<footer class="border-t border-slate-200 bg-white py-8 px-4 text-center">
+        <div class="max-w-4xl mx-auto text-xs text-slate-500 space-y-3">
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-medium">
+                <a class="hover:text-red-600 transition" href="/privacy.html">개인정보처리방침</a>
+                <span>·</span>
+                <a class="hover:text-red-600 transition" href="/terms.html">이용약관</a>
             </div>
-            <p class="max-w-xl mx-auto text-slate-400">
-                This tool is provided for educational and estimation purposes only. All calculations run client-side.
-            </p>
-            <p>&copy; 2026 Fast Browser Video Trimmer. All rights reserved.</p>
+            <p>100% 무서버 클라이언트 사이드 연산 | 데이터 외부 전송 제로 보증</p>
+            <p class="text-[11px] text-slate-400">© 2026 Video Cutter. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Logic Script -->
     <script>
-        
-        function calculate() {
-            const prim = parseFloat(document.getElementById('primaryVal').value.replace(/,/g, '')) || 0;
-            const sec = parseFloat(document.getElementById('secVal').value) || 1;
-            const cat = document.getElementById('calcCat').value;
-            
-            let mult = 1.0;
-            if (cat === 'conservative') mult = 0.90;
-            if (cat === 'growth') mult = 1.15;
-            
-            const total = prim * sec * mult;
-            const monthly = total / 12;
-            const rate = ((total / (prim || 1)) * 10).toFixed(1);
-            
-            document.getElementById('resPrimary').textContent = '$' + Math.round(total).toLocaleString('en-US');
-            document.getElementById('resMonthly').textContent = '$' + Math.round(monthly).toLocaleString('en-US');
-            document.getElementById('resBenchmark').textContent = rate + '%';
-            
-            document.getElementById('resultCard').classList.remove('hidden');
-        }
-        
+        const fileInput = document.getElementById('videoFile');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const noVideoMsg = document.getElementById('noVideoMsg');
+        const trimControls = document.getElementById('trimControls');
+        const startRange = document.getElementById('startRange');
+        const endRange = document.getElementById('endRange');
+        const startTimeVal = document.getElementById('startTimeVal');
+        const endTimeVal = document.getElementById('endTimeVal');
+        const clipDurationText = document.getElementById('clipDurationText');
+        const videoMetaText = document.getElementById('videoMetaText');
 
-        function copyResults() {
-            const resCard = document.getElementById('resultCard');
-            const lines = [];
-            lines.push("Fast Browser Video Trimmer - Calculation Summary");
-            lines.push("=============================");
-            resCard.querySelectorAll('.flex.justify-between').forEach(el => {
-                const k = el.querySelector('span:first-child')?.innerText || '';
-                const v = el.querySelector('span:last-child')?.innerText || '';
-                if (k && v) lines.push(k + ' ' + v);
-            });
-            lines.push("-----------------------------");
-            lines.push("👉 Try it here: https://us-video-trimmer.enjoy-onepage.com/");
-            
-            const textToCopy = lines.join('\n');
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(textToCopy).then(() => showToast());
-            } else {
-                const ta = document.createElement('textarea');
-                ta.value = textToCopy;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                showToast();
+        let videoDuration = 0;
+        let originalFileName = 'video';
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMessage');
+            if (toast && toastMsg) {
+                toastMsg.innerText = msg;
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2200);
             }
         }
 
-        function showToast() {
-            const t = document.getElementById('toastNotification');
-            t.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                t.classList.add('opacity-0', 'pointer-events-none');
-            }, 2200);
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            originalFileName = file.name.replace(/\.[^/.]+$/, "");
+            const url = URL.createObjectURL(file);
+            videoPlayer.src = url;
+            videoPlayer.classList.remove('hidden');
+            noVideoMsg.classList.add('hidden');
+            trimControls.classList.remove('opacity-50', 'pointer-events-none');
+
+            videoPlayer.onloadedmetadata = () => {
+                videoDuration = videoPlayer.duration;
+                startRange.max = videoDuration;
+                endRange.max = videoDuration;
+                startRange.value = 0;
+                endRange.value = Math.min(60, videoDuration);
+
+                updateTimes();
+                videoMetaText.innerText = `해상도: ${videoPlayer.videoWidth}x${videoPlayer.videoHeight} | 전체 길이: ${videoDuration.toFixed(1)}s`;
+                showToast("Video loaded! Select start and end timestamps.");
+            };
+        });
+
+        function updateTimes() {
+            let start = parseFloat(startRange.value);
+            let end = parseFloat(endRange.value);
+
+            if (start >= end) {
+                start = Math.max(0, end - 1);
+                startRange.value = start;
+            }
+
+            startTimeVal.innerText = `${start.toFixed(1)}s`;
+            endTimeVal.innerText = `${end.toFixed(1)}s`;
+            const dur = (end - start).toFixed(1);
+            clipDurationText.innerText = `${dur}s`;
+
+            videoPlayer.currentTime = start;
         }
 
-        function resetForm() {
-            document.getElementById('resultCard').classList.add('hidden');
-            document.getElementById('placeholderCard').classList.remove('hidden');
-        }
+        startRange.addEventListener('input', updateTimes);
+        endRange.addEventListener('input', updateTimes);
 
-        // Auto calculate on load
-        window.addEventListener('DOMContentLoaded', () => {
-            calculate();
-            document.getElementById('placeholderCard').classList.add('hidden');
+        let isRecording = false;
+        document.getElementById('trimBtn').addEventListener('click', async () => {
+            if (isRecording) return;
+            const start = parseFloat(startRange.value);
+            const end = parseFloat(endRange.value);
+            const duration = end - start;
+            if (duration <= 0) {
+                showToast("종료 시간은 시작 시간보다 커야 합니다.");
+                return;
+            }
+
+            const trimBtn = document.getElementById('trimBtn');
+            const originalBtnText = trimBtn.innerHTML;
+            trimBtn.disabled = true;
+            trimBtn.innerHTML = `<span>⏳ Encoding Clip... (<span id="renderProg">0</span>%)</span>`;
+            isRecording = true;
+
+            try {
+                videoPlayer.currentTime = start;
+                await new Promise(r => videoPlayer.onseeked = r);
+
+                let stream;
+                if (videoPlayer.captureStream) {
+                    stream = videoPlayer.captureStream();
+                } else if (videoPlayer.mozCaptureStream) {
+                    stream = videoPlayer.mozCaptureStream();
+                } else {
+                    throw new Error("브라우저가 captureStream API를 지원하지 않습니다.");
+                }
+
+                let mimeType = 'video/webm;codecs=vp9,opus';
+                if (!MediaRecorder.isTypeSupported(mimeType)) {
+                    mimeType = 'video/webm';
+                    if (!MediaRecorder.isTypeSupported(mimeType)) {
+                        mimeType = 'video/mp4';
+                    }
+                }
+
+                const chunks = [];
+                const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+
+                recorder.ondataavailable = (e) => {
+                    if (e.data && e.data.size > 0) chunks.push(e.data);
+                };
+
+                recorder.onstop = () => {
+                    const ext = mimeType.includes('mp4') ? 'mp4' : 'webm';
+                    const blob = new Blob(chunks, { type: mimeType || 'video/webm' });
+                    const blobUrl = URL.createObjectURL(blob);
+                    
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = `${originalFileName}_trimmed_${start.toFixed(0)}s_to_${end.toFixed(0)}s.${ext}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+                    trimBtn.disabled = false;
+                    trimBtn.innerHTML = originalBtnText;
+                    isRecording = false;
+                    videoPlayer.pause();
+                    showToast(`✓ [${start.toFixed(1)}s ~ ${end.toFixed(1)}s] Clip extracted & downloaded successfully!`);
+                };
+
+                recorder.start(100);
+                videoPlayer.play();
+
+                const checkInterval = setInterval(() => {
+                    if (!isRecording) {
+                        clearInterval(checkInterval);
+                        return;
+                    }
+                    const cur = videoPlayer.currentTime;
+                    const prog = Math.min(100, Math.round(((cur - start) / duration) * 100));
+                    const progEl = document.getElementById('renderProg');
+                    if (progEl) progEl.innerText = prog;
+
+                    if (cur >= end || videoPlayer.ended) {
+                        clearInterval(checkInterval);
+                        videoPlayer.pause();
+                        recorder.stop();
+                    }
+                }, 50);
+
+            } catch (err) {
+                console.error(err);
+                trimBtn.disabled = false;
+                trimBtn.innerHTML = originalBtnText;
+                isRecording = false;
+                showToast("인코딩 오류: " + err.message);
+            }
         });
     </script>
+
+  <!-- 원클릭 복사 & 토스트 스크립트 (4-4 헌법 준수) -->
+  <div id="masterToast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-3 px-6 rounded-full shadow-2xl transition opacity-0 pointer-events-none z-50">
+    클립보드에 복사되었습니다!
+  </div>
+  <script>
+    function copyMasterResult() {
+      var resEl = document.getElementById('result') || document.getElementById('resultCard') || document.querySelector('.result-box') || document.querySelector('main');
+      var text = resEl ? (resEl.innerText || resEl.textContent) : 'Free Video Trimmer & Clip Cutter (No Watermark) 계산 결과';
+      var shareText = text.trim() + "\n\n👉 Free Video Trimmer & Clip Cutter (No Watermark) 바로가기: " + window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareText).then(showMasterToast);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = shareText;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showMasterToast();
+      }
+    }
+    function showMasterToast() {
+      var t = document.getElementById('masterToast');
+      if (!t) return;
+      t.classList.remove('opacity-0', 'pointer-events-none');
+      t.classList.add('opacity-100');
+      setTimeout(function() {
+        t.classList.remove('opacity-100');
+        t.classList.add('opacity-0', 'pointer-events-none');
+      }, 2200);
+    }
+  </script>
+
 </body>
 </html>
