@@ -6,19 +6,19 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-    <title>워터마크 없는 브라우저 비디오 컷편집기 | 100% 로컬 동영상 자르기 (Video Cutter)</title>
-    <meta content="서버 업로드 없는 100% 브라우저 비디오 트리머. 쇼츠·릴스 구간 자르기, 빠른 인코딩, 워터마크 영구 무료." name="description"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Video Trimmer – Cut a Clip in Your Browser (No Upload, No Watermark)</title>
+    <meta content="Trim a video in your browser: pick the start and end, then download the clip. Your file is not uploaded and no watermark is added." name="description"/>
     <link href="https://us-video-trimmer.enjoy-onepage.com/" rel="canonical"/>
     <meta content="website" property="og:type"/>
-    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale" content="en_US">
     <meta content="https://us-video-trimmer.enjoy-onepage.com/" property="og:url"/>
     <meta content="Video Cutter - Free Video Trimmer & Clip Cutter (No Watermark)" property="og:title"/>
-    <meta content="서버 업로드 0%! 브라우저 안에서 안전하고 빠르게 영상을 자르고 다운로드하세요." property="og:description"/>
+    <meta content="Trim a video in your browser: pick the start and end, then download the clip. Your file is not uploaded and no watermark is added." property="og:description"/>
     <meta content="https://us-video-trimmer.enjoy-onepage.com/og-image.png" property="og:image"/>
     <meta content="summary_large_image" name="twitter:card"/>
     <meta content="Video Cutter - Free Video Trimmer & Clip Cutter (No Watermark)" name="twitter:title"/>
-    <meta content="서버 업로드 0%! 브라우저 안에서 안전하고 빠르게 영상을 자르고 다운로드하세요." name="twitter:description"/>
+    <meta content="Trim a video in your browser: pick the start and end, then download the clip. Your file is not uploaded and no watermark is added." name="twitter:description"/>
     <meta content="https://us-video-trimmer.enjoy-onepage.com/og-image.png" name="twitter:image"/>
     <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 
@@ -37,9 +37,9 @@
           "applicationCategory": "MultimediaApplication",
           "operatingSystem": "All",
           "browserRequirements": "Requires JavaScript. Requires HTML5.",
-          "description": "서버 업로드 없는 100% 브라우저 비디오 트리머. 쇼츠·릴스 구간 자르기 무료.",
+          "description": "Browser-based video trimmer: pick a start and end time and download the clip. No upload, no watermark.",
           "image": "https://us-video-trimmer.enjoy-onepage.com/og-image.png",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
         },
         {
           "@type": "FAQPage",
@@ -47,26 +47,34 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "동영상 파일이 외부 웹 서버로 업로드되나요?",
+              "name": "Is my video uploaded to a server?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "아닙니다. HTML5 File API 및 Canvas 비디오 프레임 추출 기술을 통해 영상 파일이 사용자의 컴퓨터/스마트폰 메모리 내에서만 로컬 연산되므로 100% 안전합니다."
+                "text": "No. The file stays on your device. The page reads it with your browser's File API and nothing is sent to our server."
               }
             },
             {
               "@type": "Question",
-              "name": "자른 동영상에 워터마크(로고)가 강제로 붙나요?",
+              "name": "Does the clip get a watermark?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "붙지 않습니다. CapCut이나 기성 무료 편집 앱과 달리 워터마크가 전혀 삽입되지 않은 원본 그대로의 깔끔한 클립을 무료로 추출할 수 있습니다."
+                "text": "No. No logo or watermark is added to the clip."
               }
             },
             {
               "@type": "Question",
-              "name": "유튜브 쇼츠나 인스타그램 릴스 길이에 맞춰 자를 수 있나요?",
+              "name": "Is the clip the same quality as the original?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "네, 시작 시간과 종료 시간을 s 단위로 정밀하게 슬라이더로 조절하여 15s, 30s, 60s 등 숏폼 규격에 딱 맞춰 자를 수 있습니다."
+                "text": "Not exactly. The selected part is re-recorded in real time, so it is re-encoded (usually as WebM) and quality and file size can differ from the original. For a lossless cut, use a desktop editor that can copy the original stream."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How exact is the cut?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The sliders move in 0.1-second steps. Because the clip is recorded while it plays, it can start or end a fraction of a second away from the times you chose."
               }
             }
           ]
@@ -83,7 +91,7 @@
       input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid #2563eb !important; outline-offset: 1px !important; }
     </style>
 <style id="mobile-hardening-shield">
-  /* 모바일 한글 단어 단위 줄바꿈 보존 & 버튼 텍스트 단일행 쉴드 */
+  /* keep words whole when wrapping on small screens; keep button labels on one line */
   body, h1, h2, h3, h4, p, span, label {
     word-break: keep-all;
     overflow-wrap: break-word;
@@ -101,7 +109,7 @@
     }
   }
 </style>
-    <link rel="alternate" type="application/rss+xml" title="워터마크 없는 브라우저 비디오 컷편집기 | 100% 로컬 동영상 자르기 (Video Cutter)" href="https://us-video-trimmer.enjoy-onepage.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="Video Trimmer – Cut a Clip in Your Browser (No Upload, No Watermark)" href="https://us-video-trimmer.enjoy-onepage.com/rss.xml">
     <link rel="sitemap" type="application/xml" href="https://us-video-trimmer.enjoy-onepage.com/sitemap.xml">
 <style>/* site styles: compiled Tailwind 3.4.17 for this page (replaces the CDN, 2026-09-30) */*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.sticky{position:sticky}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.top-0{top:0}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.my-8{margin-top:2rem;margin-bottom:2rem}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:.25rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-8{height:2rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-8{width:2rem}.w-full{width:100%}.min-w-\[140px\]{min-width:140px}.max-w-4xl{max-width:56rem}.flex-shrink-0,.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254/var(--tw-border-opacity,1))}.border-blue-200\/80{border-color:rgba(191,219,254,.8)}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202/var(--tw-border-opacity,1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.bg-blue-50\/50{background-color:rgba(239,246,255,.5)}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235/var(--tw-bg-opacity,1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39/var(--tw-bg-opacity,1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226/var(--tw-bg-opacity,1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242/var(--tw-bg-opacity,1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-slate-50\/50{background-color:rgba(248,250,252,.5)}.bg-slate-900\/90{background-color:rgba(15,23,42,.9)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgba(239,246,255,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-indigo-50{--tw-gradient-to:#eef2ff var(--tw-gradient-to-position)}.object-contain{-o-object-fit:contain;object-fit:contain}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:.5rem}.pb-4{padding-bottom:1rem}.pt-3{padding-top:.75rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99/var(--tw-text-opacity,1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39/var(--tw-text-opacity,1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113/var(--tw-text-opacity,1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68/var(--tw-text-opacity,1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38/var(--tw-text-opacity,1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28/var(--tw-text-opacity,1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-red-600{accent-color:#dc2626}.opacity-0{opacity:0}.opacity-100{opacity:1}.opacity-50{opacity:.5}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-sm,.shadow-xl{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color)}.outline{outline-style:solid}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.hover\:border-red-400:hover{--tw-border-opacity:1;border-color:rgb(248 113 113/var(--tw-border-opacity,1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216/var(--tw-bg-opacity,1))}.hover\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87/var(--tw-bg-opacity,1))}.hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28/var(--tw-bg-opacity,1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38/var(--tw-text-opacity,1))}.hover\:shadow:hover{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.group[open] .group-open\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width:640px){.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:p-4{padding:1rem}.sm\:p-8{padding:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:768px){.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}@media (min-width:1024px){.lg\:col-span-5{grid-column:span 5/span 5}.lg\:col-span-7{grid-column:span 7/span 7}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}}@media (prefers-color-scheme:dark){.dark\:border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85/var(--tw-border-opacity,1))}.dark\:from-slate-800{--tw-gradient-from:#1e293b var(--tw-gradient-from-position);--tw-gradient-to:rgba(30,41,59,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.dark\:to-slate-800\/80{--tw-gradient-to:rgba(30,41,59,.8) var(--tw-gradient-to-position)}.dark\:text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250/var(--tw-text-opacity,1))}.dark\:text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}}</style>
 </head>
@@ -129,13 +137,13 @@
         <div class="border-b border-slate-200 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
                 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800 mb-2">
-                    <i class="fa-solid fa-bolt text-red-600"></i><span>100% 브라우저 로컬 비디오 인스턴트 트리머</span>
+                    <i class="fa-solid fa-bolt text-red-600"></i><span>Runs in your browser</span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                     Free Video Trimmer & Clip Cutter (No Watermark)
                 </h1>
                 <p class="text-slate-600 text-xs sm:text-sm mt-1">
-                    서버 업로드 없는 100% 안전한 동영상 자르기. 쇼츠·릴스 구간을 s 단위로 손쉽게 편집하세요.
+                    Trim a video without uploading it: pick the start and end, then download the clip. No watermark.
                 </p>
             </div>
             <div class="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4 text-center min-w-[140px] shadow-sm">
@@ -151,14 +159,14 @@
             <!-- Left 5 cols: Upload & Slider Controls -->
             <section class="lg:col-span-5 bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
                 <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-film text-red-600"></i>동영상 파일 선택
+                    <i class="fa-solid fa-film text-red-600"></i>Choose a video
                 </h2>
 
                 <div class="border-2 border-dashed border-slate-200 hover:border-red-400 rounded-2xl p-6 text-center cursor-pointer transition bg-slate-50/50" onclick="document.getElementById('videoFile').click()">
                     <i class="fa-solid fa-cloud-arrow-up text-3xl text-red-500 mb-2"></i>
                     <div class="text-xs font-bold text-slate-700">Select or Drag & Drop Video File</div>
                     <div class="text-[11px] text-slate-400 mt-1">MP4, WebM, MOV Supported (100% Private, Zero Server Upload)</div>
-                    <input type="file" id="videoFile" accept="video/*" class="hidden" aria-label="비디오 파일 선택">
+                    <input type="file" id="videoFile" accept="video/*" class="hidden" aria-label="Choose a video file">
                 </div>
 
                 <!-- Trim Controls -->
@@ -168,7 +176,7 @@
                             <span>Start Time</span>
                             <span class="font-mono text-red-600" id="startTimeVal">0.0s</span>
                         </div>
-                        <input type="range" id="startRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="시작 시간">
+                        <input type="range" id="startRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="Start time">
                     </div>
 
                     <div>
@@ -176,11 +184,11 @@
                             <span>End Time</span>
                             <span class="font-mono text-red-600" id="endTimeVal">0.0s</span>
                         </div>
-                        <input type="range" id="endRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="종료 시간">
+                        <input type="range" id="endRange" min="0" max="100" value="0" step="0.1" class="w-full accent-red-600" aria-label="End time">
                     </div>
 
-                    <button id="trimBtn" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 whitespace-nowrap" aria-label="구간 자르기">
-                        <i class="fa-solid fa-scissors"></i><span>구간 자르고 다운로드</span>
+                    <button id="trimBtn" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 whitespace-nowrap" aria-label="Trim and download the selected part">
+                        <i class="fa-solid fa-scissors"></i><span>Trim &amp; download</span>
                     </button>
                 </div>
             </section>
@@ -192,13 +200,13 @@
                         <video id="videoPlayer" controls class="w-full h-full object-contain hidden"></video>
                         <div id="noVideoMsg" class="text-xs text-slate-400 p-6">
                             <i class="fa-solid fa-play-circle text-4xl text-slate-600 mb-2 block"></i>
-                            왼쪽에서 동영상 파일을 선택하면 실시간 플레이어가 나타납니다.
+                            Choose a video to preview it here.
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between text-xs text-slate-500 px-1">
-                        <span id="videoMetaText">해상도: - | 전체 길이: -</span>
-                        <span class="font-bold text-emerald-600"><i class="fa-solid fa-shield mr-1"></i>100% 로컬 연산</span>
+                        <span id="videoMetaText">Resolution: - | Length: -</span>
+                        <span class="font-bold text-emerald-600"><i class="fa-solid fa-shield mr-1"></i>Processed on your device</span>
                     </div>
                 </div>
             </section>
@@ -206,7 +214,7 @@
     
       <div class="mt-4 text-center">
         <button id="masterCopyBtn" onclick="copyMasterResult()" class="whitespace-nowrap w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm mx-auto whitespace-nowrap">
-          <span>📋 결과 복사하기</span>
+          <span>📋 Copy link to this tool</span>
         </button>
       </div>
 
@@ -214,86 +222,67 @@
 
     <!-- Toast -->
     <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-xl z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-2">
-        <i class="fa-solid fa-circle-check text-red-400"></i><span id="toastMessage">안내 메시지</span>
+        <i class="fa-solid fa-circle-check text-red-400"></i><span id="toastMessage">Message</span>
     </div>
 
-    <!-- 📖 E-E-A-T Guide Section (Q1~Q7) -->
+    <!-- How it works + FAQ -->
     <section class="max-w-4xl mx-auto my-8 px-4">
       <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
         <div class="border-b border-slate-200 pb-4">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700 mb-2">
-            <span>⚖️ 2026년 W3C WebCodecs 및 HTML5 미디어 표준</span>
-          </div>
-          <h3 class="text-xl font-black text-slate-900 tracking-tight">
-            브라우저 로컬 비디오 트리밍 원리 및 숏폼 규격 가이드
-          </h3>
+          <h2 class="text-xl font-black text-slate-900 tracking-tight">How this video trimmer works</h2>
           <p class="text-xs sm:text-sm text-slate-600 mt-1">
-            본 도구는 HTML5 Media Source Extensions 및 Canvas 하드웨어 가속 비디오 렌더링 표준을 준수합니다.
+            Your browser opens the file directly from your device. When you press Trim &amp; download, it plays the part you selected, records it with the browser's built-in recorder (MediaRecorder) and saves that recording as a new file.
           </p>
         </div>
 
-        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-          <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">핵심 산출 공식 (Formula & Video Spec)</div>
-          <div class="text-sm sm:text-base font-extrabold text-slate-900 font-mono leading-relaxed">
-            클립 재생 시간 = 종료 타임스탬프(s) - 시작 타임스탬프(s) | 숏폼 권장 길이: 유튜브 쇼츠 <60s, 릴스 15~30s
-          </div>
-        </div>
-
-        <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
-          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">💡 실전 계산 사례 (Case Study)</div>
-          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            예를 들어, 10분짜리 브이로그 영상 원본에서 가장 재미있는 하이라이트 구간(02:15 ~ 02:45)의 30s 클립을 선택하면 서버 업로드 대기 시간 없이 브라우저 메모리에서 1s 만에 분할되어 인스타그램 릴스 규격으로 즉시 저장됩니다.
-          </p>
-        </div>
+        <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
+          <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>Recording runs in real time: a 30-second clip takes about 30 seconds. Keep this tab open and visible until the download starts.</span></li>
+          <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>Most browsers save the clip as WebM (MP4 where the browser records MP4). It is re-encoded, so quality and file size can differ from the original.</span></li>
+          <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>Long or high-resolution videos need a lot of memory. Close other tabs if the page slows down.</span></li>
+        </ul>
 
         <div class="space-y-3">
-          <h4 class="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2"><span>❓</span> 자주 묻는 질문 (FAQ)</h4>
-          
-    <!-- 심층 가이드북 바로가기 (4-1-4 헌법 준수) -->
-    
-
-    <details class="group border border-slate-200 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2"><span>❓</span> Frequently asked questions</h3>
+          <details class="group border border-slate-200 rounded-xl p-4">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
-              <span>Q. 동영상 파일이 외부 웹 서버로 업로드되나요?</span>
+              <span>Q. Is my video uploaded to a server?</span>
               <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
             </summary>
             <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
-              아닙니다. HTML5 File API 및 Canvas 비디오 프레임 추출 기술을 통해 영상 파일이 사용자의 컴퓨터/스마트폰 메모리 내에서만 로컬 연산되므로 100% 안전합니다.
+              No. The file stays on your device. The page reads it with your browser's File API and nothing is sent to our server.
             </div>
           </details>
           <details class="group border border-slate-200 rounded-xl p-4">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
-              <span>Q. 자른 동영상에 워터마크(로고)가 강제로 붙나요?</span>
+              <span>Q. Does the clip get a watermark?</span>
               <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
             </summary>
             <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
-              붙지 않습니다. CapCut이나 기성 무료 편집 앱과 달리 워터마크가 전혀 삽입되지 않은 원본 그대로의 깔끔한 클립을 무료로 추출할 수 있습니다.
+              No. No logo or watermark is added to the clip.
             </div>
           </details>
           <details class="group border border-slate-200 rounded-xl p-4">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
-              <span>Q. 유튜브 쇼츠나 인스타그램 릴스 길이에 맞춰 자를 수 있나요?</span>
+              <span>Q. Is the clip the same quality as the original?</span>
               <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
             </summary>
             <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
-              네, 시작 시간과 종료 시간을 s 단위로 정밀하게 슬라이더로 조절하여 15s, 30s, 60s 등 숏폼 규격에 딱 맞춰 자를 수 있습니다.
+              Not exactly. The selected part is re-recorded in real time, so it is re-encoded (usually as WebM) and quality and file size can differ from the original. For a lossless cut, use a desktop editor that can copy the original stream.
             </div>
           </details>
-        </div>
-
-        <div>
-          <h4 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
-            <span>📋</span> 반드시 챙겨야 할 실전 체크리스트
-          </h4>
-          <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
-            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>숏폼 영상은 첫 3s 이내에 시선을 끄는 구간을 시작점으로 설정하세요.</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>유튜브 쇼츠 규격(최대 60s)을 s과하지 않도록 상단 표시 시간을 확인하세요.</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">✓</span><span>대용량 4K 영상 편집 시 기기 메모리 여유 공간을 확보하고 브라우저 탭을 정리하세요.</span></li>
-          </ul>
+          <details class="group border border-slate-200 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm text-slate-800">
+              <span>Q. How exact is the cut?</span>
+              <span class="transition group-open:rotate-180 text-slate-400 text-xs">▼</span>
+            </summary>
+            <div class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-100 pt-3">
+              The sliders move in 0.1-second steps. Because the clip is recorded while it plays, it can start or end a fraction of a second away from the times you chose.
+            </div>
+          </details>
         </div>
 
         <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-500 leading-relaxed">
-          <strong>⚠️ 면책 고지:</strong> 본 비디오 컷편집기는 사용자의 브라우저 사양(GPU/CPU/메모리)에 따라 성능 차이가 발생할 수 있습니다. 저작권이 있는 타인의 영상을 무단 편집·배포하여 발생하는 법적 책임은 사용자 본인에게 있습니다.
+          <strong>Note:</strong> Speed depends on your device and browser. Only trim and share videos you have the right to use.
         </div>
       </div>
     </section>
@@ -303,31 +292,17 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <!-- 🔗 딥리서치 토픽 클러스터: 관련 전문 블로그 가이드 역링크 -->
-<section class="max-w-4xl mx-auto my-6 px-4">
-  <div class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800/80 rounded-2xl border border-blue-200/80 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
-    <div class="flex items-center gap-3">
-      <span class="text-2xl flex-shrink-0">💻</span>
-      <div class="text-left">
-        <div class="text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">관련 블로그 글</div>
-        <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug">카카오톡 무료 PC 백업 및 컴퓨터·스마트폰 필수 IT 문제해결 완벽 가이드</div>
-      </div>
-    </div>
-    <a href="https://tech-kr.enjoy-onepage.com/2026/09/18/kakaotalk-free-pc-backup-guide/" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition shadow-sm hover:shadow flex items-center gap-1.5">
-      <span>테크 가이드 읽기</span>
-      <span>→</span>
-    </a>
-  </div>
-</section>
 
 <footer class="border-t border-slate-200 bg-white py-8 px-4 text-center">
         <div class="max-w-4xl mx-auto text-xs text-slate-500 space-y-3">
             <div class="flex flex-wrap justify-center gap-4 text-xs font-medium">
-                <a class="hover:text-red-600 transition" href="/privacy.html">개인정보처리방침</a>
+                <a class="hover:text-red-600 transition" href="/privacy.html">Privacy Policy</a>
                 <span>·</span>
-                <a class="hover:text-red-600 transition" href="/terms.html">이용약관</a>
+                <a class="hover:text-red-600 transition" href="/terms.html">Terms of Use</a>
+                <span>·</span>
+                <a class="hover:text-red-600 transition" href="/disclaimer.html">Disclaimer</a>
             </div>
-            <p>100% 무서버 클라이언트 사이드 연산 | 데이터 외부 전송 제로 보증</p>
+            <p>Runs entirely in your browser. Your video file is never uploaded.</p>
             <p class="text-[11px] text-slate-400">© 2026 Video Cutter. All rights reserved.</p>
         </div>
     </footer>
@@ -376,7 +351,7 @@
                 endRange.value = Math.min(60, videoDuration);
 
                 updateTimes();
-                videoMetaText.innerText = `해상도: ${videoPlayer.videoWidth}x${videoPlayer.videoHeight} | 전체 길이: ${videoDuration.toFixed(1)}s`;
+                videoMetaText.innerText = `Resolution: ${videoPlayer.videoWidth}x${videoPlayer.videoHeight} | Length: ${videoDuration.toFixed(1)}s`;
                 showToast("Video loaded! Select start and end timestamps.");
             };
         });
@@ -408,14 +383,14 @@
             const end = parseFloat(endRange.value);
             const duration = end - start;
             if (duration <= 0) {
-                showToast("종료 시간은 시작 시간보다 커야 합니다.");
+                showToast("The end time must be later than the start time.");
                 return;
             }
 
             const trimBtn = document.getElementById('trimBtn');
             const originalBtnText = trimBtn.innerHTML;
             trimBtn.disabled = true;
-            trimBtn.innerHTML = `<span>⏳ Encoding Clip... (<span id="renderProg">0</span>%)</span>`;
+            trimBtn.innerHTML = `<span>⏳ Recording clip... (<span id="renderProg">0</span>%)</span>`;
             isRecording = true;
 
             try {
@@ -428,7 +403,7 @@
                 } else if (videoPlayer.mozCaptureStream) {
                     stream = videoPlayer.mozCaptureStream();
                 } else {
-                    throw new Error("브라우저가 captureStream API를 지원하지 않습니다.");
+                    throw new Error("this browser cannot record video here (captureStream is not supported). Try a recent Chrome, Edge or Firefox.");
                 }
 
                 let mimeType = 'video/webm;codecs=vp9,opus';
@@ -491,20 +466,18 @@
                 trimBtn.disabled = false;
                 trimBtn.innerHTML = originalBtnText;
                 isRecording = false;
-                showToast("인코딩 오류: " + err.message);
+                showToast("Recording failed: " + err.message);
             }
         });
     </script>
 
-  <!-- 원클릭 복사 & 토스트 스크립트 (4-4 헌법 준수) -->
+  <!-- copy-link button + toast -->
   <div id="masterToast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-3 px-6 rounded-full shadow-2xl transition opacity-0 pointer-events-none z-50">
-    클립보드에 복사되었습니다!
+    Link copied!
   </div>
   <script>
     function copyMasterResult() {
-      var resEl = document.getElementById('result') || document.getElementById('resultCard') || document.querySelector('.result-box') || document.querySelector('main');
-      var text = resEl ? (resEl.innerText || resEl.textContent) : 'Free Video Trimmer & Clip Cutter (No Watermark) 계산 결과';
-      var shareText = text.trim() + "\n\n👉 Free Video Trimmer & Clip Cutter (No Watermark) 바로가기: " + window.location.href;
+      var shareText = document.title + "\n" + window.location.href;
       if (navigator.clipboard) {
         navigator.clipboard.writeText(shareText).then(showMasterToast);
       } else {

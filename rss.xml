@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>워터마크 없는 브라우저 비디오 컷편집기 | 100% 로컬 동영상 자르기 (Video Cutter)</title>
+  <title>Video Trimmer – Cut a Clip in Your Browser (No Upload, No Watermark)</title>
   <link>https://us-video-trimmer.enjoy-onepage.com/</link>
-  <description>서버 업로드 없는 100% 브라우저 비디오 트리머. 쇼츠·릴스 구간 자르기, 빠른 인코딩, 워터마크 영구 무료.</description>
+  <description>Trim a video in your browser: pick the start and end, then download the clip. Your file is not uploaded and no watermark is added.</description>
   <language>en-us</language>
   <atom:link href="https://us-video-trimmer.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
   <lastBuildDate>Tue, 29 Sep 2026 06:03:17 +0000</lastBuildDate>
