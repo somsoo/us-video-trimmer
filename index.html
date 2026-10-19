@@ -352,7 +352,7 @@ class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; mar
             const toast = document.getElementById('toastNotification');
             const toastMsg = document.getElementById('toastMessage');
             if (toast && toastMsg) {
-                toastMsg.innerText = msg;
+                toastMsg.textContent = msg;
                 toast.classList.remove('opacity-0', 'pointer-events-none');
                 setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2200);
             }
@@ -377,7 +377,7 @@ class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; mar
                 endRange.value = Math.min(60, videoDuration);
 
                 updateTimes();
-                videoMetaText.innerText = `Resolution: ${videoPlayer.videoWidth}x${videoPlayer.videoHeight} | Length: ${videoDuration.toFixed(1)}s`;
+                videoMetaText.textContent = `Resolution: ${videoPlayer.videoWidth}x${videoPlayer.videoHeight} | Length: ${videoDuration.toFixed(1)}s`;
                 showToast("Video loaded! Select start and end timestamps.");
             };
         });
@@ -391,10 +391,10 @@ class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; mar
                 startRange.value = start;
             }
 
-            startTimeVal.innerText = `${start.toFixed(1)}s`;
-            endTimeVal.innerText = `${end.toFixed(1)}s`;
+            startTimeVal.textContent = `${start.toFixed(1)}s`;
+            endTimeVal.textContent = `${end.toFixed(1)}s`;
             const dur = (end - start).toFixed(1);
-            clipDurationText.innerText = `${dur}s`;
+            clipDurationText.textContent = `${dur}s`;
 
             videoPlayer.currentTime = start;
         }
@@ -478,7 +478,7 @@ class="manual-ad-box ad-bottom-banner" style="width: 100%; max-width: 960px; mar
                     const cur = videoPlayer.currentTime;
                     const prog = Math.min(100, Math.round(((cur - start) / duration) * 100));
                     const progEl = document.getElementById('renderProg');
-                    if (progEl) progEl.innerText = prog;
+                    if (progEl) progEl.textContent = prog;
 
                     if (cur >= end || videoPlayer.ended) {
                         clearInterval(checkInterval);
